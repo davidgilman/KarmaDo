@@ -12,7 +12,6 @@ class ListTableViewController: UITableViewController {
 
     
     @IBAction func saveItem(segue: UIStoryboardSegue) {
-        
     }
     
     @IBAction func cancelItem(segue: UIStoryboardSegue) {
@@ -61,9 +60,32 @@ class ListTableViewController: UITableViewController {
         
         cell.textLabel?.text = listItem.itemName
         
+        if listItem.completed {
+            cell.accessoryType = .Checkmark
+        }
+        else {
+        cell.accessoryType = .None
+        }
+        
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath:
+        
+        NSIndexPath!) {
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: false)
+            
+            let tappedItem: ListItem = self.listArray.objectAtIndex(indexPath.row) as!
+                
+            ListItem
+            
+            tappedItem.completed = !tappedItem.completed
+            
+            tableView.reloadData()
+            
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
