@@ -9,10 +9,7 @@
 import UIKit
 
 class ListTableViewController: UITableViewController {
-
     
-    @IBAction func saveItem(segue: UIStoryboardSegue) {
-    }
     
     @IBAction func cancelItem(segue: UIStoryboardSegue) {
         
@@ -34,6 +31,22 @@ class ListTableViewController: UITableViewController {
         self.listArray.addObject(item2)
         let item3 = ListItem(name: "Item 3.. heh!")
         self.listArray.addObject(item3)
+    }
+    
+    @IBAction func unwindToList(segue:UIStoryboardSegue){
+        
+        var source: ViewController = segue.sourceViewController as! ViewController
+        
+        var addItem: ListItem = source.item!
+        
+        //if addItem != nil{
+            
+            self.listArray.addObject(addItem)
+            
+            self.tableView.reloadData()
+            
+      //  }
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -47,14 +47,14 @@
                                 <rect key="frame" x="200" y="144" width="200" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24C-YA-XVY">
                                 <rect key="frame" x="240" y="415" width="121" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -84,15 +84,21 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="bzC-7H-DmU">
                             <connections>
-                                <segue destination="eeb-Zp-e6T" kind="unwind" unwindAction="saveItem:" id="E1B-2e-Jd7"/>
+                                <segue destination="eeb-Zp-e6T" kind="unwind" unwindAction="unwindToList:" id="gbD-fZ-vYY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="date" destination="VKn-c5-crd" id="OwO-yM-5sj"/>
+                        <outlet property="donation" destination="qmj-dh-yNA" id="yvv-FF-Lhl"/>
+                        <outlet property="itemTextField" destination="dc0-gc-yaj" id="dud-Ii-naU"/>
+                        <outlet property="saveItem" destination="bzC-7H-DmU" id="PhL-hf-CGg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="eeb-Zp-e6T" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="337"/>
+            <point key="canvasLocation" x="25" y="1077"/>
         </scene>
         <!--ChariToDo App-->
         <scene sceneID="sRH-ja-4dx">
@@ -116,7 +122,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -141,7 +147,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2V-V3-kjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="337"/>
+            <point key="canvasLocation" x="-704" y="1085"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3K0-Xh-xWD">
@@ -160,7 +166,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zg-kj-DGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="337"/>
+            <point key="canvasLocation" x="25" y="329"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a9B-Zq-hDS">

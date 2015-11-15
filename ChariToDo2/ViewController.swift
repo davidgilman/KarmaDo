@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var item: ListItem?
+    
+    @IBOutlet weak var itemTextField: UITextField!
+    
+    @IBOutlet weak var date: UIDatePicker!
+    
+    @IBOutlet weak var donation: UITextField!
+    
+    @IBOutlet weak var saveItem: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +30,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if sender as? NSObject != self.saveItem{
+            return
+        }
+        if self.itemTextField.text?.characters.count > 0{
+            self.item = ListItem(name: self.itemTextField.text!)
+        }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            self.view.endEditing(true)
+        }
+        super.touchesBegan(touches, withEvent:event)
+    }
+    
 }
 
