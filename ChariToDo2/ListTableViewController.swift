@@ -10,6 +10,8 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
     
+    @IBOutlet weak var itemTitle: UILabel!
+    @IBOutlet weak var deadline: UILabel!
     
     @IBAction func cancelItem(segue: UIStoryboardSegue) {
         
@@ -19,18 +21,18 @@ class ListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor(red:0.81, green:0.85, blue:0.86, alpha:0.7)
         loadInitialData()
 
     }
     
     func loadInitialData() {
-        let item1 = ListItem(name: "Item 1.. yay!")
-        self.listArray.addObject(item1)
-        let item2 = ListItem(name: "Item 2.. keep it coming!")
-        self.listArray.addObject(item2)
-        let item3 = ListItem(name: "Item 3.. heh!")
-        self.listArray.addObject(item3)
+//        let item1 = ListItem(name: "Item 1.. yay!")
+//        self.listArray.addObject(item1)
+//        let item2 = ListItem(name: "Item 2.. keep it coming!")
+//        self.listArray.addObject(item2)
+//        let item3 = ListItem(name: "Item 3.. heh!")
+//        self.listArray.addObject(item3)
     }
     
     @IBAction func unwindToList(segue:UIStoryboardSegue){
@@ -66,12 +68,29 @@ class ListTableViewController: UITableViewController {
     }
 
     
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell", forIndexPath: indexPath)
+        let cellIdentifier = "CellPrototype"
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! UITableViewCell!
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: cellIdentifier)
+        }
+        
+   //     tableView.registerClass(<#T##aClass: AnyClass?##AnyClass?#>, forHeaderFooterViewReuseIdentifier: <#T##String#>)
+        
+       // var cell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell", forIndexPath: indexPath)
 
         let listItem: ListItem = self.listArray.objectAtIndex(indexPath.row) as! ListItem
         
+        let dateformatter = NSDateFormatter()
+        dateformatter.dateFormat = "dd-MM-yyy"
+        let strDate = dateformatter.stringFromDate(listItem.date)
+    
+        print("date:", strDate)
+        
         cell.textLabel?.text = listItem.itemName
+        cell.detailTextLabel?.text = strDate
         
         if listItem.completed {
             cell.accessoryType = .Checkmark

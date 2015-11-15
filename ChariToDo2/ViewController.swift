@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     var item: ListItem?
     
-    @IBOutlet weak var itemTextField: UITextField!
+    @IBOutlet weak var itemTextField: UITextField?
     
     @IBOutlet weak var date: UIDatePicker!
     
@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red:0.00, green:0.59, blue:0.53, alpha:1.0)
+        itemTextField!.backgroundColor = UIColor(red:0.81, green:0.85, blue:0.86, alpha:1.0)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -31,11 +33,15 @@ class ViewController: UIViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
         if sender as? NSObject != self.saveItem{
             return
         }
-        if self.itemTextField.text?.characters.count > 0{
-            self.item = ListItem(name: self.itemTextField.text!)
+        if let count = self.itemTextField?.text {
+            
+            // var selectedDate: NSDate? = formatter.dateFromString(date)
+            
+            self.item = ListItem(name: self.itemTextField!.text!)
         }
     }
     
