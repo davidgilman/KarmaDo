@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red:0.00, green:0.59, blue:0.53, alpha:1.0)
+        self.view.backgroundColor = UIColor(red:0.01, green:0.66, blue:0.96, alpha:1.0)
         itemTextField!.backgroundColor = UIColor(red:0.81, green:0.85, blue:0.86, alpha:1.0)
         // Do any additional setup after loading the view, typically from a nib.
     }

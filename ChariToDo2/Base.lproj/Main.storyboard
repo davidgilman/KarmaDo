@@ -56,15 +56,32 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enter Credit Card Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVo-d8-4XQ">
+                                <rect key="frame" x="67" y="564" width="281" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1111 1111 1111 1111" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ngn-mI-ngN">
+                                <rect key="frame" x="90" y="610" width="235" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="RVo-d8-4XQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="750-Fl-crY"/>
+                            <constraint firstItem="ngn-mI-ngN" firstAttribute="top" secondItem="RVo-d8-4XQ" secondAttribute="bottom" constant="25" id="7cG-is-Sik"/>
+                            <constraint firstItem="RVo-d8-4XQ" firstAttribute="top" secondItem="qmj-dh-yNA" secondAttribute="bottom" constant="30" id="IKX-WB-PKo"/>
                             <constraint firstItem="24C-YA-XVY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LPr-UC-DGl"/>
                             <constraint firstItem="dc0-gc-yaj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="QEV-jV-BAb"/>
                             <constraint firstItem="qmj-dh-yNA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VMs-mD-Q1A"/>
                             <constraint firstItem="qmj-dh-yNA" firstAttribute="top" secondItem="24C-YA-XVY" secondAttribute="bottom" constant="8" id="Zt5-Qs-XT3"/>
                             <constraint firstItem="dc0-gc-yaj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="abO-db-0yW"/>
+                            <constraint firstItem="ngn-mI-ngN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ePT-2j-ImJ"/>
                             <constraint firstItem="dc0-gc-yaj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iFy-wt-FaL"/>
                             <constraint firstItem="24C-YA-XVY" firstAttribute="top" secondItem="VKn-c5-crd" secondAttribute="bottom" constant="20" id="ndz-ua-0Dp"/>
                             <constraint firstItem="VKn-c5-crd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pAr-1S-fxB"/>
